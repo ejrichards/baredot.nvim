@@ -46,5 +46,6 @@ lazy.nvim
 ## Functions
 
 - `require("baredot").info()` - Print current status
+- `require("baredot").is_enabled()` - Returns current status as boolean
 - `require("baredot").toggle()` - Manually toggle the env vars on / off
 - `require("baredot").set(boolean)` - Set the env vars on / off

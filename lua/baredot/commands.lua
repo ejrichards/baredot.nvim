@@ -13,24 +13,24 @@ function Commands.set(enable)
 	end
 end
 
+function Commands.is_enabled()
+	return vim.env.GIT_DIR ~= nil and vim.env.GIT_WORK_TREE ~= nil
+end
+
 function Commands.toggle()
-	if vim.env.GIT_DIR == nil or vim.env.GIT_WORK_TREE == nil then
-		Commands.set(true)
-	else
-		Commands.set(false)
-	end
+	Commands.set(not Commands.is_enabled())
 	Commands.info()
 end
 
 function Commands.info()
-	if vim.env.GIT_DIR == nil or vim.env.GIT_WORK_TREE == nil then
-		vim.notify("Baredot mode off", vim.log.levels.INFO, { title = "baredot.nvim" });
-	else
+	if Commands.is_enabled() then
 		vim.notify(
 			"Baredot mode on: GIT_DIR=" .. vim.env.GIT_DIR .. " GIT_WORK_TREE=" .. vim.env.GIT_WORK_TREE,
 			vim.log.levels.INFO,
 			{ title = "baredot.nvim" }
 		);
+	else
+		vim.notify("Baredot mode off", vim.log.levels.INFO, { title = "baredot.nvim" });
 	end
 end
 

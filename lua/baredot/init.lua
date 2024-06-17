@@ -47,5 +47,9 @@ end
 function Baredot.toggle()
 	return commands.toggle()
 end
+---@return boolean
+function Baredot.is_enabled()
+	return commands.is_enabled()
+end
 
 return Baredot
