@@ -37,8 +37,20 @@ end
 function Commands.setup(opt)
 	options = opt
 
-	vim.api.nvim_create_user_command("BaredotInfo", Commands.info, { desc = "BaredotInfo" })
-	vim.api.nvim_create_user_command("BaredotToggle", Commands.toggle, { desc = "BaredotToggle" })
+	vim.api.nvim_create_user_command("Baredot", function(args)
+		local cmd = vim.trim(args.args or "")
+		if cmd == "toggle" then
+			Commands.toggle()
+		else
+			Commands.info()
+		end
+	end, {
+		desc = "Baredot",
+		nargs = "?",
+		complete = function()
+			return { "info", "toggle" }
+		end
+	})
 end
 
 return Commands

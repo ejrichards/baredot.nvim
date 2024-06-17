@@ -40,8 +40,8 @@ lazy.nvim
 
 ## Commands
 
-- `:BaredotInfo` - Print current status
-- `:BaredotToggle` - Manually toggle the env vars on / off
+- `:Baredot info` - Print current status
+- `:Baredot toggle` - Manually toggle the env vars on / off
 
 ## Functions
 
