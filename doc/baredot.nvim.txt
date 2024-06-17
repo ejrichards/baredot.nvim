@@ -60,8 +60,8 @@ CONFIGURATION                             *baredot.nvim-baredot-configuration*
 
 COMMANDS                                       *baredot.nvim-baredot-commands*
 
-- `:BaredotInfo` - Print current status
-- `:BaredotToggle` - Manually toggle the env vars on / off
+- `:Baredot info` - Print current status
+- `:Baredot toggle` - Manually toggle the env vars on / off
 
 
 FUNCTIONS                                     *baredot.nvim-baredot-functions*
